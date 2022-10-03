@@ -10,7 +10,7 @@
         return ($num % 2 == 0);
     }
     ?>
-    <h1>Introduce un numero para saber si es par o no.</h1>
+    <h3>Introduce un numero para saber si es par o no.</h3>
     <form action="esPar.php" method="post">
 		<input type="number" name="numero"> <input type="submit" name="consultar" value="Consultar">
 	</form>
