@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="es-es">
-<head>
-<title>Posicion de un numero que elijamos de un numero</title>
-</head>
-<body>
-    <?php
+<?php
 
-    function digitoN(int $num, int $pos): int {
-        
+function digitoN(int $num, int $pos): int {
+    $volteado = 0;
+    while ($num >= 1) {
+        $volteado = $volteado * 10 + ($num % 10);
+        $num /= 10;
     }
 
-    echo "Este numero esta en la posicion " . digitoN(36874,7) . $pos;
-    ?>
-  </body>
-</html>
+    for ($i = 0; $i < $pos; $i ++) {
+        $volteado = $volteado / 10;
+    }
+
+    return $volteado % 10;
+}
+
+echo digitoN(156874, 3);
+
+?>

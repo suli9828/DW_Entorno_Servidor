@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="es-es">
-<head>
-<title>Quitar por detras una cantidad de digitos de un numero que elijamos</title>
-</head>
-<body>
-    <?php
+<?php
 
-    function quitaPorDetras(int $num, int $cant): int {
-        $numero = substr($num, $cant);
-        return $numero;
+function quitaPorDetras(int $num, int $cant): int {
+    for ($i = 0; $i < $cant; $i ++) {
+        $num /= 10;
     }
 
-    echo quitaPorDetras(156874, 2);
-    ?>
-  </body>
-</html>
+    return intval($num);
+}
+
+echo quitaPorDetras(156874, 2);
+?>
