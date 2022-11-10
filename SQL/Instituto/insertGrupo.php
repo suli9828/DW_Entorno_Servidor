@@ -10,8 +10,50 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO grupo (id_grupo, nombre, curso) VALUES (8, 'Desarrollo de Aplicaciones Web', '2º')";
+if (isset($_POST)) {
 
+    require_once 'conexion.php';
+
+    $idGrupo = $_POST['idGrupo'];
+    $nombre = $_POST['nombre'];
+    $curso = $_POST['curso'];
+
+
+    // Validación
+    $errores = array();
+
+    if (empty($idGrupo) || !is_numeric($idGrupo)) {
+        $errores['idGrupo'] = 'El id del grupo no es v&aacutelido.';
+    }
+
+    if (empty($nombre)) {
+        $errores['nombre'] = 'No se puede dejar el nombre del grupo vacío.';
+    }
+
+    if (empty($curso)) {
+        $errores['curso'] = 'No se puede dejar el curso vacío.';
+    }
+
+
+
+    if (count($errores) == 0) {
+
+        $sql = "INSERT INTO grupos (idGrupo, nombre, curso) VALUES ('$idGrupo', '$nombre', '$curso')";
+
+
+        $guardar = mysqli_query($db, $sql);
+
+        //var_dump($guardar);
+
+
+    } else {
+
+        $_SESSION["errores_entrada"] = $errores;
+        var_dump($_SESSION);
+    }
+
+    header("Location: formGrupo.php");
+}
 if ($conn->query($sql) === TRUE) {
     echo "Los datos se han insertado correctamente";
 } else {
@@ -19,4 +61,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>
