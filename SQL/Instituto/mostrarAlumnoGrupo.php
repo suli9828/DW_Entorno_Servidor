@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT * from alumnos";
+$sql = "SELECT * from alumnos a JOIN grupos g ON g.id_Grupo = a.Grupo_idGrupo WHERE g.id_Grupo = $Grupo_idGrupo";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

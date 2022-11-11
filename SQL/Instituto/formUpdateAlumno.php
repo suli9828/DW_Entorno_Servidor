@@ -4,7 +4,7 @@ require_once 'cabecera.php'; ?>
 <div id="principal">
 
     <br />
-    <form action="insertAlumno.php" method="POST">
+    <form action="updateAlumno.php" method="POST">
         <label for="idAlumno">ID del alumno:</label>
         <input type="number" name="idAlumno" />
         <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'idAlumno') : ''; ?>
@@ -33,7 +33,7 @@ require_once 'cabecera.php'; ?>
         <input type="number" name="Grupo_idGrupo" />
         <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'Grupo_idGrupo') : ''; ?>
 
-        <input type="submit" value="Insertar alumno" />
+        <input type="submit" value="Guardar cambios de alumno" />
     </form>
     <?php borrarErrores(); ?>
 </div>

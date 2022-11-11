@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 $servername = 'localhost';
 $username = 'root';
@@ -10,12 +12,12 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id_grupo, nombre, curso from grupo";
+$sql = "SELECT * from grupos";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
-        echo "ID de grupo: " . $row["id_grupo"] . " - Nombre: " . $row["nombre"] . " - Curso: " . $row["curso"] . "<br>";
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<br>" . " - ID de grupo: " . $row["idGrupo"] . "<br>" . " - Nombre: " . $row["nombre"] . "<br>" . " - Curso: " . $row["curso"] . "<br>" . "<input type='hidden' value='$Grupo_idGrupo'>" . "<a href='mostrarAlumnoGrupo.php'><input type='button' name='alumnos' value='Alumnos'></a>" . "<input type='hidden' value='$Grupo_idGrupo'>" . "<a href='mostrarProfesorGrupo.php'><input type='submit' name='profesores' value='Profesores'></a>" . "<br>";
     }
 } else {
     echo "Ningun resultado";
@@ -23,3 +25,5 @@ if ($result->num_rows > 0){
 
 $conn->close();
 ?>
+</body>
+</html>

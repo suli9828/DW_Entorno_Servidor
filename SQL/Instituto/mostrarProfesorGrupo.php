@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT * from profesores";
+$sql = "SELECT * from profesores WHERE idProfesor = 12";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){

@@ -10,13 +10,18 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "DELETE FROM profesor WHERE id_profesor=8";
-
+if (isset($_GET['idProfesor'])) {
+    
+    require_once 'conexion.php';
+    
+    $idAlumno = $_GET['idProfesor'];
+      
+        $sql = "DELETE FROM profesores WHERE idProfesor = $idProfesor";
+    }
 if ($conn->query($sql) === TRUE) {
-    echo "Los datos se han borrado correctamente";
+    echo "Los datos se han eliminado correctamente";
 } else {
-    echo "Error al borrar los datos: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$conn->close();
-?>
+$conn->close();   

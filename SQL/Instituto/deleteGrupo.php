@@ -10,13 +10,19 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "DELETE FROM grupo WHERE id_Grupo=10";
-
+if (isset($_GET['idGrupo'])) {
+    
+    require_once 'conexion.php';
+    
+    $idGrupo = $_GET['idGrupo'];
+      
+        $sql = "DELETE FROM grupos WHERE idGrupo = $idGrupo";
+    }
+    
 if ($conn->query($sql) === TRUE) {
-    echo "Los datos se han borrado correctamente";
+    echo "Los datos se han eliminado correctamente";
 } else {
-    echo "Error al borrar los datos: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$conn->close();
-?>
+$conn->close();   

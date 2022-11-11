@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Instituto</title>
+    <title>Murallas Reales</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 
@@ -15,7 +15,7 @@
         <!-- LOGO -->
         <div id="logo">
             <a href="principalAlumno.php">
-                Instituto
+                Murallas Reales
             </a>
         </div>
 
@@ -35,28 +35,10 @@
                     <a href="insertAlumno.php">A&ntilde;adir alumno</a>
                 </li>
                 <li>
-                    <a href="deleteAlumno.php">Eliminar alumno</a>
-                </li>
-                <li>
-                    <a href="updateAlumno.php">Editar alumno</a>
-                </li>
-                <li>
                     <a href="insertProfesor.php">A&ntilde;adir profesor</a>
                 </li>
                 <li>
-                    <a href="deleteProfesor.php">Eliminar profesor</a>
-                </li>
-                <li>
-                    <a href="updateProfesor.php">Editar profesor</a>
-                </li>
-                <li>
                     <a href="insertGrupo.php">A&ntilde;adir grupo</a>
-                </li>
-                <li>
-                    <a href="deleteGrupo.php">Eliminar grupo</a>
-                </li>
-                <li>
-                    <a href="updateGrupo.php">Editar grupo</a>
                 </li>
             </ul>
         </nav>

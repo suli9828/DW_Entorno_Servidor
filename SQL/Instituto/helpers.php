@@ -1,6 +1,5 @@
 <?php
 
-// Muestra los errores que nos devuelven en la sesión.
 
 function mostrarError($errores, $campo){
 	$alerta = '';
@@ -11,7 +10,6 @@ function mostrarError($errores, $campo){
 	return $alerta;
 }
 
-// Elimina los errores de la sesión
 
 function borrarErrores(){
 	$borrado = false;
@@ -32,61 +30,45 @@ function borrarErrores(){
 
 // Obtiene todos los alumnos de la BBDD
 
-function obtenerClientes($conexion){
+function obtenerAlumnos($conexion){
     
-    $sql = "SELECT * FROM clientes ORDER BY idCliente ASC;";
-    $clientes = mysqli_query($conexion, $sql);
+    $sql = "SELECT * FROM alumnos ORDER BY idAlumno ASC;";
+    $alumnos = mysqli_query($conexion, $sql);
     
     $resultado = [];
     
-    if($clientes && mysqli_num_rows($clientes) >= 1){
-        $resultado = $clientes;
+    if($alumnos && mysqli_num_rows($alumnos) >= 1){
+        $resultado = $alumnos;
     }
     
     return $resultado;
     
 }
 
-function obtenerClientesporid($conexion, $idCliente){
+function obtenerGrupos($conexion){
     
-    $sql = "SELECT * from clientes WHERE idCliente ='$idCliente";
-    $clientes = mysqli_query($conexion, $sql);
+    $sql = "SELECT * FROM grupos ORDER BY idGrupo ASC;";
+    $grupos = mysqli_query($conexion, $sql);
     
     $resultado = [];
     
-    if($clientes && mysqli_num_rows($clientes) >= 1){
-        $resultado = $clientes;
+    if($grupos && mysqli_num_rows($grupos) >= 1){
+        $resultado = $grupos;
     }
     
     return $resultado;
     
 }
 
-
-function obtenerAverias($conexion){
+function obtenerProfesores($conexion){
     
-    $sql = "SELECT * FROM averias ORDER BY idAveria ASC;";
-    $averias = mysqli_query($conexion, $sql);
-    
-    $resultado = [];
-    
-    if($averias && mysqli_num_rows($averias) >= 1){
-        $resultado = $averias;
-    }
-    
-    return $resultado;
-    
-}
-
-function obtenerTrabajadores($conexion){
-    
-    $sql = "SELECT * FROM trabajadores ORDER BY idTrabajador ASC;";
-    $trabajadores = mysqli_query($conexion, $sql);
+    $sql = "SELECT * FROM profesores ORDER BY idProfesor ASC;";
+    $profesores = mysqli_query($conexion, $sql);
     
     $resultado = [];
     
-    if($trabajadores && mysqli_num_rows($trabajadores) >= 1){
-        $resultado = $trabajadores;
+    if($profesores && mysqli_num_rows($profesores) >= 1){
+        $resultado = $profesores;
     }
     
     return $resultado;
