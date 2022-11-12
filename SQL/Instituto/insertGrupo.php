@@ -19,7 +19,6 @@ if (isset($_POST)) {
     $curso = $_POST['curso'];
     
     
-    // Validación
     $errores = array();
     
     if (empty($idGrupo) || !is_numeric($idGrupo)) {

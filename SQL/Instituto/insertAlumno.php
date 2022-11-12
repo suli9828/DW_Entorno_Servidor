@@ -60,10 +60,7 @@ if (isset($_POST)) {
     if (count($errores) == 0) {
         
         $sql = "INSERT INTO alumnos (idAlumno, nombre, apellidos, expediente, telefono, email, Grupo_idGrupo) VALUES ('$idAlumno', '$nombre', '$apellidos', '$expediente', '$telefono', '$email', '$Grupo_idGrupo')";
-        
-        
-        $guardar = mysqli_query($db, $sql);
-                
+                        
         
     } else {
         

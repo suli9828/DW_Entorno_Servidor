@@ -19,9 +19,7 @@ if (isset($_POST)) {
     $apellidos = $_POST['apellidos'];
     
     
-    
-    // Validación
-    $errores = array();
+        $errores = array();
     
     if (empty($idProfesor) || !is_numeric($idProfesor)) {
         $errores['idProfesor'] = 'El id del profesor no es v&aacutelido.';
@@ -40,9 +38,7 @@ if (isset($_POST)) {
         
         $sql = "INSERT INTO profesores (idProfesor, nombre, apellidos) VALUES ('$idProfesor', '$nombre', '$apellidos')";
         
-        
-        $guardar = mysqli_query($db, $sql);
-                
+                        
         
     } else {
         
