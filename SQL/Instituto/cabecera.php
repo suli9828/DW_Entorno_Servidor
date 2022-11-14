@@ -13,7 +13,7 @@
 
     <header id="cabecera">
         <div id="logo">
-            <a href="principalAlumno.php">
+            <a href="indexPrincipal.php">
                 Murallas Reales
             </a>
         </div>
@@ -31,6 +31,9 @@
                     <a href="principalGrupo.php">Grupos</a>
                 </li>
                 <li>
+                    <a href="principalTutoria.php">Tutoría</a>
+                </li>
+                <li>
                     <a href="insertAlumno.php">A&ntilde;adir alumno</a>
                 </li>
                 <li>
@@ -38,6 +41,9 @@
                 </li>
                 <li>
                     <a href="insertGrupo.php">A&ntilde;adir grupo</a>
+                </li>
+                <li>
+                    <a href="insertTutoria.php">A&ntilde;adir tutoría</a>
                 </li>
             </ul>
         </nav>

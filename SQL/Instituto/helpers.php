@@ -44,19 +44,23 @@ function obtenerAlumnos($conexion){
 }
 
 function obtenerAlumnosIdGrupo($conexion){
-    
 
-    $sql = "SELECT * from alumnos a JOIN grupos g ON g.idGrupo = a.Grupo_idGrupo WHERE g.idGrupo = a.Grupo_idGrupo;";
+if (isset($_GET['Grupo_idgrupo'])) {
+    
+    require_once 'conexion.php';
+    
+    $Grupo_idGrupo = $_GET['Grupo_idgrupo'];
+
+    $sql = "SELECT a.* from alumnos a JOIN grupos g ON g.idGrupo = a.Grupo_idGrupo WHERE g.idGrupo = $Grupo_idGrupo";
     
     $alumnos = mysqli_query($conexion, $sql);
-    
     $resultado = [];
     
     if($alumnos && mysqli_num_rows($alumnos) >= 1){
         $resultado = $alumnos;
     }
-    
     return $resultado;
+}
 }
 
 
@@ -88,4 +92,19 @@ function obtenerProfesores($conexion){
     
     return $resultado;
     
+}
+
+function obtenerTutorias($conexion){
+    
+        $sql = "SELECT * from tutoria";
+        $profesores = mysqli_query($conexion, $sql);
+    
+    $resultado = [];
+    
+    if($profesores && mysqli_num_rows($profesores) >= 1){
+        $resultado = $profesores;
+    }
+    
+    return $resultado;
+
 }

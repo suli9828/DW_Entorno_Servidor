@@ -21,7 +21,7 @@
 
             <?php
 			$alumnos = obtenerAlumnosIdGrupo($db);
-			if (!empty($alumnos)) {
+            if (!empty($alumnos)) {
 				while ($alumno = mysqli_fetch_assoc($alumnos)) {
 			?>
             <tr>

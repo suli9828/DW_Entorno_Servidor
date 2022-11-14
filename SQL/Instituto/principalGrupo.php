@@ -20,15 +20,19 @@
             $grupos = obtenerGrupos($db);
             if (!empty($grupos)) {
                 while ($grupo = mysqli_fetch_assoc($grupos)) {
+                    $idGrupo=$grupo['idGrupo'];
             ?>
             <tr>
                 <td><?= $grupo['idGrupo'] ?></td>
                 <td><?= $grupo['nombre'] ?></td>
                 <td><?= $grupo['curso'] ?></td>
-                <td><input type="hidden" value="<?= $idGrupo['idGrupo'] ?>"><a href='mostrarAlumnoGrupo.php'><input
-                            type='button' name='alumnos' value='Mostrar alumnos de este grupo'></a><a
-                        href='mostrarProfesorGrupo.php'><input type='submit' name='profesores'
+                <td>
+                    <form action="mostrarAlumnoGrupo.php" method="GET"><input type="hidden" name="Grupo_idgrupo"
+                            value="<?= $idGrupo?>"><a href='mostrarAlumnoGrupo.php'><input type='submit' name='alumnos'
+                                value='Mostrar alumnos de este grupo'>
+                    </form></a><a href='mostrarProfesorGrupo.php'><input type='submit' name='profesores'
                             value='Mostrar profesores de este grupo'></a>
+
                 </td>
                 <td>
                     <a href='deleteGrupo.php?idGrupo=<?= $grupo['idGrupo'] ?>'><input type='button' name='eliminagrupo'
