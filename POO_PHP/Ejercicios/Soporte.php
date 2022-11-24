@@ -14,6 +14,15 @@ class Soporte{
     $this->precio = $precio;
   }
 
+
+  public function isAlquilado(){
+    return $this->alquilado;
+  }
+
+  public function setAlquilado(bool $b){
+    $this->alquilado = $b;
+  }
+  
   public function getPrecio(){
     return $this->precio;
   }
@@ -22,7 +31,11 @@ class Soporte{
     return $this->precio + ($this->precio * (self::IVA / 100));
   }
 
-  public function Numero(){
+  public function getTitulo(){
+    return $this->titulo;
+  }
+
+  public function getNumero(){
     return $this->numero;
   }
 
