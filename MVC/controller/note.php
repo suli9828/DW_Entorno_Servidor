@@ -1,65 +1,70 @@
 <?php
+
+include_once 'model/note.php';
+include_once 'config/config.php';
+
+// Clase que controla las notas y las relaciona con las vistas.
+class NoteController {
+
+  /* Atributos */
+  public string $view; // Vista que se quiere mostrar en cada momento.
+  private NoteTable $noteTableObj; // Objeto noteTable, para interactuar con las Base de Datos.
+  public string $titulo; // Título que se muestra en cada vista.
+
+  /* Constructor */
+  public function __construct(){
+
+    $this->view = constant("DEFAULT_ACTION"); // Por defecto, al iniciar, la vista será la predeterminada.
+    $this->noteTableObj = new NoteTable(); // Crea un objeto noteTable.
     
-    declare(strict_types=1);
-    include_once './models/note.php';
+  }
 
-    class NoteController{
+  /* Métodos */
+  
+  // Lista de todas las notas.
+  public function list(){
+    $this->view = 'list'; 
+    $this->titulo = "Tus notas"; 
+    return $this->noteTableObj->getNotes(); // Devuelve el array con todas las notas en la BBDD.
+  }
 
-        public $page_title;
-        public $view;
-        private $noteObj;
+  // Confirmación de modificación.
+  public function confirmUpdate(){
+    $this->view = 'update';
+    $this->titulo = "Editar nota";
+    return $this->noteTableObj->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+  }
 
-        public function __construct(){
-            $this->view = 'list_note';
-            $this->page_title = '';
-            $this->noteObj = new NoteTabla();
-        }
+  // Modificación de una nota.
+  public function update(){
+    $this->noteTableObj->updateNote($_GET['id'], $_POST['titulo'], $_POST['descripcion']); // Actualiza la nota.
+    return $this->list(); // Vuelve a la lista de notas.
+  }
 
-        public function list(){
-            $this->page_title = 'Listado de notas';
-            return $this->noteObj->getNota(1);
-        }
+  // Confirmación de inserción.
+  public function confirmInsert(){
+    $this->view = 'insert';
+    $this->titulo = "Nueva nota";
+  }
 
-        public function insert(){
-            $this->page_title = 'Insertar nota';
-            $this->view = 'insert_note';
-        }
+  // Inserción de una nota.
+  public function insert(){
+    $this->noteTableObj->insertNote($_POST['titulo'], $_POST['descripcion']); // Inserta la nota.
+    return $this->list(); // Vuelve a la lista de notas.
+  }
 
-        public function getVista(){
-            return $this->vista;
-        }
+  // Confirmación de borrado.
+  public function confirmDelete(){
+    $this->view = 'delete';
+    $this->titulo = "¿Seguro que quiere eliminar esta nota?";
+    return $this->noteTableObj->getNoteById($_GET['id']); // Devuelve una nota, con el id pasado por url.
+  }
 
-        public function getPagina(){
-            return $this->pagina;
-        }
+  // Borrado de una nota.
+  public function delete(){
+    $this->noteTableObj->deleteNote($_GET['id']); // Elimina la nota.
+    return $this->list(); // Vuelve a la lista de notas.
+  }
+}
 
-        public function setVista($vista){
-            $this->vista = $vista;
-        }
-
-        public function setPagina($pagina){
-            $this->pagina = $pagina;
-        }
-
-        public function listar(){
-            return $this->noteObj->getNotas();
-        }
-
-        public function getNota($id){
-            return $this->noteObj->getNota($id);
-        }
-
-        public function insertar($title, $content){
-            $this->noteObj->insertarNota($title, $content);
-        }
-
-        public function eliminar($id){
-            $this->noteObj->eliminarNota($id);
-        }
-
-        public function editar($id, $title, $content){
-            $this->noteObj->editarNota($id, $title, $content);
-        }
-
-    }
 ?>
