@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+  <title>Notas </title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" descripcion="IE=edge">
   <meta name="viewport" descripcion="width=device-width, initial-scale=1.0">
