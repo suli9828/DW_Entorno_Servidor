@@ -1,12 +1,11 @@
 <div class="delete">
     <div class="deleteNote">
-        <p class="titulo"><?= $dataToView->gettitulo() ?></p> <!-- Título de la nota -->
+        <p class="titulo"><?= $dataToView->gettitulo() ?></p>
         <hr />
-        <p class="descripcion"><?= $dataToView->getdescripcion() ?></p> <!-- Contenido de la nota -->
+        <p class="descripcion"><?= $dataToView->getdescripcion() ?></p>
     </div>
-    <!-- Formulario que envía el action delete con el id de la nota al index. -->
     <form action="index.php?action=delete&id=<?= $dataToView->getId() ?>" method="post">
-        <input class="delete" type="submit" value="Eliminar" /> <!-- Botón de elminar nota -->
+        <input class="delete" type="submit" value="Eliminar" />
     </form>
-    <a href="index.php"><button class="cancel">Cancelar</button></a> <!-- Botón de cancelar -->
+    <a href="index.php"><button class="cancel">Cancelar</button></a>
 </div>
