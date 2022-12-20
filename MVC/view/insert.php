@@ -3,7 +3,7 @@
         <div class="insertNote">
             <input class="titulo" type="text" name="titulo" placeholder="Nombre del alumno" />
             <hr />
-            <textarea class="descripcion" name="descripcion" placeholder="Nota del alumno"></textarea>
+            <input class="descripcion" type="number" name="descripcion" placeholder="Nota del alumno"></input>
         </div>
         <input class="ok" type="submit" value="Aceptar" />
     </form>
