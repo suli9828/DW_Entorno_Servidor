@@ -6,8 +6,7 @@
 }
 
 body {
-  background-color: #e00000;
-  background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+  background-color: #4dc2b2;
 }
 
 main {
@@ -17,6 +16,7 @@ main {
   backdrop-filter: blur(5px);
   border-radius: 20px;
 }
+
 main::after {
   content: '.';
   visibility: hidden;
@@ -24,11 +24,14 @@ main::after {
   display: block;
   clear: both;
 }
+
 h1 {
   text-align: center;
-  font-size: 7em;
-  text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff,
-    -2px -2px 2px #fff;
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: 3.5em;
+  text-shadow: 1px 1px 1px rgb(219, 201, 94), -1px 1px 1px rgb(219, 201, 94),
+    1px -1px 1px rgb(219, 201, 94), -1px -1px 1px rgb(219, 201, 94);
 }
 
 /* List */
@@ -36,6 +39,7 @@ div.listNotes {
   width: 100%;
   margin: 2vh auto;
 }
+
 div.note {
   float: left;
   width: 21%;
@@ -44,49 +48,56 @@ div.note {
   overflow: hidden;
   margin: 0 2% 2% 2%;
   background-color: #fff;
-  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
   border-radius: 5px;
   padding: 1vh 1vw;
 }
+
 div.note p.title {
   font-size: 1.5em;
   font-weight: 700;
   margin: 0 0 0 2px;
 }
+
 div.note div.content {
   overflow: hidden;
   max-height: 253px;
   margin: 2px 0 8px 2px;
 }
+
 div.note button {
   float: right;
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
 }
+
 button:hover {
   cursor: pointer;
 }
+
 div.note button.update {
-  border: 2px solid #000861;
-  background-color: #0013e0;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #e4cc61;
+  color: rgb(0, 0, 0);
 }
+
 div.note button.delete {
-  border: 2px solid #610f00;
+  border: 2px solid #000000;
   background-color: #e02000;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
+
 div.list a button.insert {
-  border: 2px solid #000861;
-  background-color: #0013e0;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #e4cc61;
+  color: rgb(0, 0, 0);
   padding: 5px;
   width: 100%;
   margin: 2vh auto;
   border-radius: 5px;
   font-size: 1.5em;
 }
+
 div.list div.listNotes p.noNotes {
   font-size: 3em;
 }
@@ -96,40 +107,44 @@ div.deleteNote {
   width: 100%;
   margin: 2vh auto;
   background-color: #fff;
-  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
   border-radius: 5px;
   padding: 1vh 1vw;
 }
+
 div.deleteNote p.title {
   font-size: 4em;
   font-weight: 700;
   margin: 0 0 0 2px;
 }
+
 div.deleteNote p.content {
   font-size: 2em;
   margin: 2px 0 0 2px;
   overflow-wrap: break-word;
 }
+
 div.delete form input.delete {
-  border: 2px solid #610f00;
+  border: 2px solid #000000;
   background-color: #e02000;
-  color: #fff;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.delete a button.cancel {
-  border: 2px solid #000861;
-  background-color: #0013e0;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #e4cc61;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.delete form input.delete:hover {
   cursor: pointer;
 }
@@ -139,10 +154,10 @@ div.updateNote {
   width: 100%;
   margin: 2vh auto;
   background-color: #fff;
-  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
   border-radius: 5px;
   padding: 1vh 1vw;
 }
+
 div.updateNote input.title {
   font-size: 4em;
   font-weight: 700;
@@ -151,6 +166,7 @@ div.updateNote input.title {
   background: none;
   width: 100%;
 }
+
 div.updateNote textarea.content {
   font-size: 2em;
   margin: 2px 0 0 2px;
@@ -161,26 +177,29 @@ div.updateNote textarea.content {
   border: none;
   background: none;
 }
+
 div.update form input.ok {
-  border: 2px solid #610f00;
-  background-color: #e02000;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #5587e4;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.update a button.cancel {
-  border: 2px solid #000861;
-  background-color: #0013e0;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #e4cc61;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.update form input.ok:hover {
   cursor: pointer;
 }
@@ -194,6 +213,7 @@ div.insertNote {
   border-radius: 5px;
   padding: 1vh 1vw;
 }
+
 div.insertNote input.title {
   font-size: 4em;
   font-weight: 700;
@@ -202,6 +222,7 @@ div.insertNote input.title {
   background: none;
   width: 100%;
 }
+
 div.insertNote textarea.content {
   font-size: 2em;
   margin: 2px 0 0 2px;
@@ -212,26 +233,29 @@ div.insertNote textarea.content {
   border: none;
   background: none;
 }
+
 div.insert form input.ok {
-  border: 2px solid #610f00;
-  background-color: #e02000;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #58ca6b;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.insert a button.cancel {
-  border: 2px solid #000861;
-  background-color: #0013e0;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #e4cc61;
+  color: rgb(0, 0, 0);
   padding: 5px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   float: left;
 }
+
 div.insert form input.ok:hover {
   cursor: pointer;
 }
