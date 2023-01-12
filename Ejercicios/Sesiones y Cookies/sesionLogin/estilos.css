@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #141e30;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+  font-weight: bold;
+  font-size: 5em;
+  color: #e2c679;
+  text-decoration: underline;
+}
+
+.login-box {
+  text-align: center;
+}
+
+.user-box {
+  text-align: center;
+  margin: 2em;
+}
+
+.user-box label {
+  color: #e2c679;
+  font-size: 3em;
+}
+
+input {
+  font-size: 3em;
+}
+
+input.boton {
+  font-size: 3em;
+  text-align: center;
+  background-color: #e2c679;
+  color: #141e30;
+  padding: 0.2em;
+}
+
+h1.main {
+  margin-bottom: 1em;
+  margin-top: 3em;
+  font-weight: bold;
+  font-size: 4em;
+  color: #e2c679;
+  text-align: center;
+}
+
+button.logout {
+  font-size: 3em;
+  text-align: center;
+  background-color: #e2c679;
+  color: #141e30;
+  padding: 0.2em;
+  font-weight: bold;
+}
+
+button a:visited {
+  color: #141e30;
+}
